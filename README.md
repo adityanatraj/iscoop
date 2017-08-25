@@ -16,7 +16,11 @@ You'll need to have python installed. That's it.
 
 ## Usage
 
-After downloading this repo (it's just a single python file and this README), you run the script: 
+After downloading this repo, you:
+
+1. start your computer/laptop as a WiFi AP
+2. connect your iDevice to that WiFi AP
+3. run `iscoop`:
 
 ```bash
 ./iscoop.py
