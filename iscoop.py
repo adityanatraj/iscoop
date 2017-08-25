@@ -104,7 +104,10 @@ class ScoopHandler(BaseHTTPRequestHandler):
         else:
             with open(local_f, 'rb') as infile:
                 data = infile.read()
-                self.send_head(length=len(data))
+                if local_f.endswith('css'):
+                  self.send_head(length=len(data), mime_type='text/css')
+                else:
+                  self.send_head(length=len(data))
                 self.wfile.write(data)
         return
 
@@ -116,9 +119,9 @@ class ScoopHandler(BaseHTTPRequestHandler):
         formatted_page = PAGE.format(css=CSS, body=BODY)
         self.respond(formatted_page)
 
-    def send_head(self, status=200, length=0):
+    def send_head(self, status=200, length=0, mime_type='text/html'):
         self.send_response(status)
-        self.send_header('Content-type', 'text/html')
+        self.send_header('Content-type', mime_type)
         self.send_header('Content-length', length)
         self.end_headers()
 
@@ -363,5 +366,5 @@ CSS = """
 if __name__ == '__main__':
     port, output_dir = get_args()
 
-    runserver('', port)
+    runserver('0.0.0.0', port)
 

@@ -6,7 +6,7 @@ I was told it would work upon plugging it in. It did not. I went through some `a
 
 Enter `iScoop`. 
 
-Things pretty easy to do:
+Things that are pretty easy to do:
 1. make your laptop into a private WiFi AP
 2. run a web upload server
 
@@ -20,22 +20,22 @@ After downloading this repo, you:
 
 1. start your computer/laptop as a WiFi AP
 2. connect your iDevice to that WiFi AP
-3. run `iscoop`:
-
-```bash
-./iscoop.py
-```
+3. run `iscoop` by executing `python iscoop.py` in your terminal
+4. open up Safari (see Notes) and upload away!
 
 ## Thanks
 
-Your help to quicken this production is greatly appreciated.
+Your help to quicken the making of this tool is greatly appreciated.
 
 - [hayageek](https://github.com/hayageek/jquery-upload-file/) for a simple js uploader.
 
+## Notes
+
+Apparently, you need to use safari on iOS to be able to upload `.mov` files because [there's an issue](https://bugs.chromium.org/p/chromium/issues/detail?id=414769) with 0-byte file reporting.
 
 ## License
 
-Copyright (c) 2017 Aditya Natraj
+Copyright (c) 2017 Aditya Natraj aditya@jawns.us
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
