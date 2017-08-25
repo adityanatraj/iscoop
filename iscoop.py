@@ -83,11 +83,21 @@ class ScoopHandler(BaseHTTPRequestHandler):
 
         self.respond('')
 
+    @staticmethod
+    def strip_query_params(path_with_params):
+      position = path_with_params.find('?')
+      if position == -1:
+        return path_with_params
+
+      return path_with_params[0:position]
+
     def serve_static(self, path):
         local_dir = get_current_dir()
         local_path = path[1:]
 
-        local_f = os.path.join(local_dir, local_path)
+        stripped_path = ScoopHandler.strip_query_params(local_path)
+
+        local_f = os.path.join(local_dir, stripped_path)
 
         if not os.path.exists(local_f):
             print('doesnt exist: {}'.format(local_f))
@@ -120,10 +130,11 @@ class ScoopHandler(BaseHTTPRequestHandler):
 def get_local_address():
     # from here: https://stackoverflow.com/a/25850698/2789057
 
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.connect(('8.8.8.8', 1))
-    ip = s.getsockname()[0]
+#    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+#    s.connect(('8.8.8.8', 1))
+#    ip = s.getsockname()[0]
 
+    ip = '10.42.0.1'
     return ip
 
 
@@ -352,5 +363,5 @@ CSS = """
 if __name__ == '__main__':
     port, output_dir = get_args()
 
-    runserver('localhost', port)
+    runserver('', port)
 
