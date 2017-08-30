@@ -52,9 +52,6 @@ def get_args():
 
 class ScoopHandler(BaseHTTPRequestHandler):
 
-    def __init__(self, request, client_address, server):
-        BaseHTTPRequestHandler.__init__(self, request, client_address, server)
-
     def do_POST(self):
 
         if self.path != '/upload/':
