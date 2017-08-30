@@ -14,6 +14,34 @@ Things that are pretty easy to do:
 
 You'll need to have python installed. That's it.
 
+## WiFi AP
+
+It's true. Much of the simplicity and security of `iScoop` comes from the easy and security of your ability to make a good WiFi access point (AP) with your computer. Unfortunately, not all platforms are the same, so provided are some basic instructions to get you started. They've been tested as working as of `Aug 29, 2017`.
+
+#### In Ubuntu:
+
+Steps:
+
+1. go to your `WiFi Settings`, either through the `Settings` application or the menu bar
+2. select `Use as Hotspot` and you should see the name and password associated with your Access Point
+
+#### In Windows:
+
+Steps:
+
+1. I have no idea.
+
+#### In OS X:
+
+Steps:
+
+1. You'll, first, need to set up having the Loopback network interface show up `Network Preferences`.
+	- `sudo networksetup -createnetworkservice Loopback lo0`
+	- `sudo networksetup -setmanual Loopback 172.20.42.42 255.255.255.255`
+2. Open up `Sharing` from `Settings`
+3. Share your connection from: `Loopback` to computers using 'Wi-Fi'
+4. You can set up your `Wi-Fi Options` as you'd like to improve `security`
+
 ## Usage
 
 After downloading this repo, you:
