@@ -39,8 +39,8 @@ Steps:
 	- `sudo networksetup -createnetworkservice Loopback lo0`
 	- `sudo networksetup -setmanual Loopback 172.20.42.42 255.255.255.255`
 2. Open up `Sharing` from `Settings`
-3. Share your connection from: `Loopback` to computers using 'Wi-Fi'
-4. You can set up your `Wi-Fi Options` as you'd like to improve `security`
+3. Share your connection from: `Loopback` to computers using `Wi-Fi`
+4. You can set up your `Wi-Fi Options` as you'd like to improve security
 
 ## Usage
 
